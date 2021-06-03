@@ -1,0 +1,29 @@
+{
+  "name": "yth-notify",
+  "version": "0.0.1",
+  "description": "Library for YouTube video upload and Twitch live detection",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CwhiteKJ/yth-notify.git"
+  },
+  "keywords": [
+    "Youtube",
+    "Twitch",
+    "Notify"
+  ],
+  "author": "WhiteKJ hands8142",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CwhiteKJ/yth-notify/issues"
+  },
+  "homepage": "https://github.com/CwhiteKJ/yth-notify#readme",
+  "dependencies": {
+    "events": "^3.3.0",
+    "rss-parser": "^3.12.0",
+    "simple-youtube-api": "^5.2.1"
+  }
+}
