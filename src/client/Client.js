@@ -1,6 +1,7 @@
 "use strict"
 
 const ActionsManager = require("../actions/ActionsManager")
+const DBManager = require("../database/DBManager")
 const EventEmitter = require("events")
 
 /**
@@ -94,6 +95,12 @@ class Client extends EventEmitter {
      * @private
      */
     this.actions = new ActionsManager(this)
+
+    /**
+     * @type {DBManager}
+     * @private
+     */
+    this.knex = new DBManager(this)
   }
 }
 
