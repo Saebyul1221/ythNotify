@@ -94,7 +94,6 @@ class Client extends EventEmitter {
      * @private
      */
     this.actions = new ActionsManager(this)
-    console.log(this)
   }
 }
 
