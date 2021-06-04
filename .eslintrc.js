@@ -10,8 +10,9 @@ module.exports = {
   extends: "eslint:recommended",
   rules: {
     "no-unused-vars": 1,
-    "no-redeclare": 1,
+    "no-redeclare": 2,
     "no-console": 0,
     "no-undef": 0,
+    "no-extra-semi": 0,
   },
 }
