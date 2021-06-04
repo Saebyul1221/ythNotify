@@ -1,5 +1,5 @@
 {
-  "name": "yth-notify",
+  "name": "ythNotify",
   "version": "0.0.1",
   "description": "Library for YouTube video upload and Twitch live detection",
   "main": "./src/index.js",
@@ -22,8 +22,12 @@
   },
   "homepage": "https://github.com/CwhiteKJ/yth-notify#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "events": "^3.3.0",
+    "fs": "0.0.1-security",
+    "knex": "^0.95.6",
     "rss-parser": "^3.12.0",
-    "simple-youtube-api": "^5.2.1"
+    "simple-youtube-api": "^5.2.1",
+    "sqlite": "^4.0.23"
   }
 }
