@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CwhiteKJ/yth-notify.git"
+    "url": "git+https://github.com/CwhiteKJ/ythNotify.git"
   },
   "keywords": [
     "Youtube",
@@ -18,9 +18,9 @@
   "author": "WhiteKJ hands8142",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/CwhiteKJ/yth-notify/issues"
+    "url": "https://github.com/CwhiteKJ/ythNotify/issues"
   },
-  "homepage": "https://github.com/CwhiteKJ/yth-notify#readme",
+  "homepage": "https://github.com/CwhiteKJ/ythNotifyy#readme",
   "dependencies": {
     "axios": "^0.21.1",
     "events": "^3.3.0",
