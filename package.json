@@ -1,5 +1,5 @@
 {
-  "name": "ythNotify",
+  "name": "ythnotify",
   "version": "0.0.1",
   "description": "Library for YouTube video upload and Twitch live detection",
   "main": "./src/index.js",
