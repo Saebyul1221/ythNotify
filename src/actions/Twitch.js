@@ -32,26 +32,33 @@ class TwitchStreaming {
           }
         )
         const token = tokenResponse.data.access_token
-        const streamResponse = await axios.get(
-          "https://api.twitch.tv/helix/streams",
-          {
-            params: { user_login: channel },
-            headers: {
-              Authorization: `Bearer ${token}`,
-              "Client-ID": client._options.twitch.clientid,
-            },
-          }
-        )
-        const status = (await this.getStatus(channel))[0].status
-        if (streamResponse.data.data.length !== 0) {
-          if (streamResponse.data.data[0].type === "live") {
-            if (status == "off") {
-              await client.emit("TwitchStreaming", streamResponse.data.data[0])
-              await this.updateStatus(channel, "on")
+        if (toke) {
+          const streamResponse = await axios.get(
+            "https://api.twitch.tv/helix/streams",
+            {
+              params: { user_login: channel },
+              headers: {
+                Authorization: `Bearer ${token}`,
+                "Client-ID": client._options.twitch.clientid,
+              },
             }
+          )
+          const status = (await this.getStatus(channel))[0].status
+          if (streamResponse.data.data.length !== 0) {
+            if (streamResponse.data.data[0].type === "live") {
+              if (status == "off") {
+                await client.emit(
+                  "TwitchStreaming",
+                  streamResponse.data.data[0]
+                )
+                await this.updateStatus(channel, "on")
+              }
+            }
+          } else {
+            if (status == "on") await this.updateStatus(channel, "off")
           }
         } else {
-          if (status == "on") await this.updateStatus(channel, "off")
+          throw new Error("I can't get token.")
         }
       })
     }, client._interval * 1000)
