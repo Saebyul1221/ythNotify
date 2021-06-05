@@ -42,30 +42,27 @@ class TwitchStreaming {
             },
           }
         )
-        const status = (await getStatus(channel))[0].status
+        const status = (await this.getStatus(channel))[0].status
         if (streamResponse.data.data.length !== 0) {
           if (streamResponse.data.data[0].type === "live") {
             if (status == "off") {
               await client.emit("TwitchStreaming", streamResponse.data.data[0])
-              await updateStatus(channel, "on")
+              await this.updateStatus(channel, "on")
             }
           }
         } else {
-          if (status == "on") {
-            await updateStatus(channel, "off")
-          }
+          if (status == "on") await this.updateStatus(channel, "off")
         }
       })
     }, client._interval * 1000)
   }
-}
+  async getStatus(channel) {
+    return await knex.select("status").from("twitch").where({ channel })
+  }
 
-async function getStatus(channel) {
-  return await knex.select("status").from("twitch").where({ channel })
-}
-
-async function updateStatus(channel, status) {
-  return await knex.update({ status }).from("twitch").where({ channel })
+  async updateStatus(channel, status) {
+    return await knex.update({ status }).from("twitch").where({ channel })
+  }
 }
 
 module.exports = TwitchStreaming
