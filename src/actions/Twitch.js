@@ -32,7 +32,7 @@ class TwitchStreaming {
           }
         )
         const token = tokenResponse.data.access_token
-        if (toke) {
+        if (token) {
           const streamResponse = await axios.get(
             "https://api.twitch.tv/helix/streams",
             {
@@ -58,7 +58,7 @@ class TwitchStreaming {
             if (status == "on") await this.updateStatus(channel, "off")
           }
         } else {
-          throw new Error("I can't get token.")
+          throw new Error("[Twitch] I can't get token.")
         }
       })
     }, client._interval * 1000)
