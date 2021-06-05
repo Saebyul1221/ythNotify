@@ -3,8 +3,10 @@
 class ActionsManager {
   constructor(client) {
     this.client = client
-    this.register(require("./Twitch"))
-    this.register(require("./Youtube"))
+    if (this.client._options["twitchStatus"] === true)
+      this.register(require("./Twitch"))
+    if (this.client._options["youtubeStatus"] === true)
+      this.register(require("./Youtube"))
   }
 
   register(Action) {

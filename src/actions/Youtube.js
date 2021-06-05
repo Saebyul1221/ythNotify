@@ -5,12 +5,19 @@ const parser = new Parser()
 const Youtube = require("simple-youtube-api")
 const startAt = Date.now()
 const lastVideos = {}
-
+const onlyTestVid =
+  "https://www.youtube.com/watch?v=jNQXAC9IVRw&list=PLqZt0sNilvRD5t2eHBPXGnfS4LGQaNi8d"
 class YoutubeUpload {
   constructor(client) {
     this.client = client
+
     this.youtube = new Youtube(this.client._options?.youtube.token)
 
+    this.youtube.getVideo(onlyTestVid).catch(() => {
+      throw new Error(
+        "[Youtube] API key not valid. Please pass a valid API key."
+      )
+    })
     this.check()
     setInterval(() => this.check(), this.client?._interval * 1000)
   }
