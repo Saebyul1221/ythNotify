@@ -23,7 +23,7 @@ class Client extends EventEmitter {
     this._streamers = new Array()
 
     /**
-     * Default interval second: 20s
+     * Default interval second: 60s
      */
     this._interval = this._options?._interval ?? 60
 
