@@ -38,7 +38,7 @@ const yth = new Yth.Client({
 })
 
 yth.on("YoutubeUpload", (data) => {
-  console.log("New video detected! \n", data)
+  console.log("New video detected! \n" + data)
 })
 
 yth.on("TwitchStreaming", (data) => {
