@@ -25,7 +25,7 @@ class Client extends EventEmitter {
     /**
      * Default interval second: 20s
      */
-    this._interval = this._options?._interval ?? 20
+    this._interval = this._options?._interval ?? 60
 
     /**
      * Youtube Options
