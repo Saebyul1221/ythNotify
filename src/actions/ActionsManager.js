@@ -3,7 +3,7 @@
 class ActionsManager {
   constructor(client) {
     this.client = client
-    // this.register(require("./Twitch"))
+    this.register(require("./Twitch"))
     this.register(require("./Youtube"))
   }
 
