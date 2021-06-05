@@ -15,7 +15,7 @@ $ yarn add ythnotify
 
 ### How to use?
 
-❯ To use this module, you need a Youtube Data v3 API Key, Twitch API Secure, and a Client ID.
+❯ To use this module, you need a Youtube Data v3 API Key, Twitch API Secreat, and a Client ID.
 
 Youtube API: [Click here](https://console.cloud.google.com/apis/library/youtube.googleapis.com?q=Youtube&id=125bab65-cfb6-4f25-9826-4dcc309bc508&project=brilliant-rhino-281406)  
 Twitch API: [Click here](https://dev.twitch.tv/console/apps)
